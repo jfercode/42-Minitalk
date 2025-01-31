@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaferna2 <jaferna2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jaferna2 <jaferna2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 13:33:58 by jaferna2          #+#    #+#             */
-/*   Updated: 2025/01/30 11:10:34 by jaferna2         ###   ########.fr       */
+/*   Updated: 2025/01/31 12:53:36 by jaferna2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,19 @@
 #  define DEC "0123456789"
 # endif
 
+# define RST	"\033[0m"
+# define RED	"\033[1;31m"
+# define BLUE	"\033[1;34m"
+# define GREEN	"\033[1;32m"
+
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdarg.h>
 # include <string.h>
 # include <ctype.h>
-
+# include <stdbool.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -96,9 +102,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-
 /*
-	LIBFT
+	PRINTF
  */
 
 int		ft_printf(int fd, char const *args, ...);

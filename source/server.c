@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaferna2 <jaferna2@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jaferna2 <jaferna2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 10:55:23 by jaferna2          #+#    #+#             */
-/*   Updated: 2025/01/31 12:56:46 by jaferna2         ###   ########.fr       */
+/*   Updated: 2025/02/03 10:58:46 by jaferna2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,29 @@
 
 /**
  * SERVER FUCNTION
- * 1- Display server PID 
+ * 1- Display server PID ✔
  * 2- Create an endless loop so that the server can 
- * 		receive signals at any time
- * 3- Receive signals
- * 4- Decrypt signals
+ * 		receive signals at any time ✔
+ * 3- Receive signals ✔
+ * 4- Decrypt signals ✔
  */
 
+/**
+ * @brief Signal handler for SIGUSR1 and SIGUSR2, reconstructing characters.
+ *
+ * This function handles signals sent to reconstruct a character bit by bit.
+ * 
+ * It interprets SIGUSR1 as a '1' and SIGUSR2 as a '0', building an 8-bit 
+ * character. 
+ * 
+ * Once a full character is received, it is printed to standard output.
+ * 
+ * If a null character (`'\0'`) is received, it signals back to confirm receipt.
+ *
+ * @param signo The received signal (SIGUSR1 or SIGUSR2).
+ * @param info A pointer to a `siginfo_t` structure containing sender 
+ * information.
+ */
 static void	handler(int signo, siginfo_t *info)
 {
 	static char		c = 0;

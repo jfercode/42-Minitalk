@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaferna2 <jaferna2@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jaferna2 <jaferna2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 10:55:18 by jaferna2          #+#    #+#             */
-/*   Updated: 2025/01/31 12:53:00 by jaferna2         ###   ########.fr       */
+/*   Updated: 2025/02/03 10:18:46 by jaferna2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,13 @@
 
 # include <signal.h>
 
-# define BUSY	0
-# define READY	1
+# ifndef BUSY
+#  define BUSY	0
+# endif
+
+# ifndef READY
+#  define READY	1
+# endif
 
 void	ft_kill(pid_t pid, int signo);
 void	ft_send_char(char c, pid_t pid);

@@ -6,21 +6,11 @@
 /*   By: jaferna2 <jaferna2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 10:55:21 by jaferna2          #+#    #+#             */
-/*   Updated: 2025/02/03 10:59:00 by jaferna2         ###   ########.fr       */
+/*   Updated: 2025/02/10 15:43:22 by jaferna2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/minitalk.h"
-
-/**
- * CLIENT FUNCTION
- * 1- Write a main in which the client takes two parameters
- * 		- The PID of the server ✔
- * 		- The message to send ✔
- * 2- Encrypt the message (encryption via bits) ✔
- * 3- Send the message to the server (PID) ✔
- * 4- Create a stop condition ✔
- */
 
 /*	Global flag for synchronization between client and server */
 volatile sig_atomic_t	g_server_pid = BUSY;
@@ -102,6 +92,17 @@ void	ft_send_char(char c, pid_t pid)
 	}
 }
 
+/**
+ * CLIENT
+ * Takes two parameters
+ * 
+ * - The PID of the server
+ * - The message to send
+ * 
+ * Encrypt the message (encryption via bits)
+ * Send the message to the server (PID)
+ * Create a stop condition
+ */
 int	main(int argc, char **argv)
 {
 	pid_t	pid;

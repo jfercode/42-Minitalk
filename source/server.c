@@ -6,20 +6,11 @@
 /*   By: jaferna2 <jaferna2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 10:55:23 by jaferna2          #+#    #+#             */
-/*   Updated: 2025/02/03 10:58:46 by jaferna2         ###   ########.fr       */
+/*   Updated: 2025/02/10 15:45:14 by jaferna2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/minitalk.h"
-
-/**
- * SERVER FUCNTION
- * 1- Display server PID ✔
- * 2- Create an endless loop so that the server can 
- * 		receive signals at any time ✔
- * 3- Receive signals ✔
- * 4- Decrypt signals ✔
- */
 
 /**
  * @brief Signal handler for SIGUSR1 and SIGUSR2, reconstructing characters.
@@ -66,6 +57,15 @@ static void	handler(int signo, siginfo_t *info)
 	ft_kill(client_pid, SIGUSR1);
 }
 
+/**
+ * SERVER
+ * 
+ * Display server PID
+ * Create an endless loop so that the server can 
+ * 		receive signals at any time.
+ * Receive signals
+ * Decrypt signals
+ */
 int	main(int argc, char **argv)
 {
 	(void)argv;

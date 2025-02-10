@@ -1,5 +1,5 @@
 # 42-Minitalk 📡
-'`Minitalk`' implementa un sistema de comunicación entre un cliente y un servidor utilizando señales de 'UNIX' (SIGUSR1 y SIGUSR2). El cliente envía mensajes al servidor bit a bit, codificando los caracteres en señales, mientras que el servidor decodifica estos mensajes y los muestra en la salida estándar.
+**`Minitalk`** implementa un sistema de comunicación entre un cliente y un servidor utilizando señales de 'UNIX' (SIGUSR1 y SIGUSR2). El cliente envía mensajes al servidor bit a bit, codificando los caracteres en señales, mientras que el servidor decodifica estos mensajes y los muestra en la salida estándar.
 
 ## ¿Cómo se manejan las señales? 🧠
 
